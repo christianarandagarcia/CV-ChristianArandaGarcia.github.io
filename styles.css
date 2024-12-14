@@ -1,86 +1,191 @@
-/* General Reset */
-body, h1, h2, p, ul, li {
+/* Resetting some default styles */
+* {
     margin: 0;
     padding: 0;
-    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #f4f7fc;
     color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-    background: #4CAF50;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #2c3e50;
+    padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+nav .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-header p {
-    font-size: 1.2rem;
+nav .menu li {
+    margin: 0 15px;
 }
 
-/* Main Content */
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    color: #4CAF50;
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-section p, section ul {
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-ul li {
-    margin-bottom: 0.5rem;
-}
-
-ul li strong {
-    color: #4CAF50;
-}
-
-/* Links */
-a {
-    color: #4CAF50;
+nav .menu a {
     text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+nav .menu a:hover {
+    color: #FF5722;
+    text-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+}
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Section Fade-In */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer */
 footer {
+    background-color: #34495e;
+    color: #ecf0f1;
     text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: #fff;
-    margin-top: 2rem;
+    padding: 20px;
     font-size: 0.9rem;
+}
+
+/* About section */
+#about {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #7f8c8d;
+}
+
+/* Experience section */
+#experience {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#experience ul {
+    list-style-type: none;
+}
+
+#experience li {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    color: #7f8c8d;
+}
+
+#experience li strong {
+    color: #2c3e50;
+}
+
+/* Education section */
+#education {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#education ul {
+    list-style-type: none;
+}
+
+#education li {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    color: #7f8c8d;
+}
+
+#education li strong {
+    color: #2c3e50;
+}
+
+/* Skills section */
+#skills {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#skills ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#skills li {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* Contact section */
+#contact {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* Utility classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    nav .menu {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+    }
+
+    #skills ul {
+        grid-template-columns: 1fr;
+    }
 }
