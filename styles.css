@@ -12,6 +12,9 @@ body {
     color: #fff; /* White text for contrast */
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -73,6 +76,7 @@ main {
     max-width: 1200px;
     margin: 120px auto 30px; /* Added margin for fixed header */
     padding: 0 20px;
+    flex: 1; /* Ensure main takes available space */
 }
 
 h1 {
@@ -134,9 +138,11 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 30px; /* Ensure space above footer */
+    flex-shrink: 0; /* Prevent footer from shrinking */
 }
 
 /* Button Style */
