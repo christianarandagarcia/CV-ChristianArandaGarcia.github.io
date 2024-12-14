@@ -8,8 +8,8 @@
 
 /* Body */
 body {
-    background-color: #1a1a1a; /* Dark background */
-    color: #fff; /* White text for contrast */
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey text for contrast */
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
@@ -19,7 +19,7 @@ body {
 
 /* Header */
 header {
-    background-color: #0f1a23; /* Deep navy */
+    background-color: #003366; /* Dark blue background */
     padding: 20px;
     text-align: center;
     position: fixed;
@@ -44,31 +44,19 @@ nav .menu li {
 
 nav .menu a {
     text-decoration: none;
-    color: #00FF7F; /* Neon green for buttons */
+    color: #00bcd4; /* Light cyan for the links */
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    position: relative;
-}
-
-nav .menu a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #00FF7F;
-    transition: width 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 nav .menu a:hover {
-    color: #fff; /* Text color change on hover */
-}
-
-nav .menu a:hover::before {
-    width: 100%; /* Underline effect on hover */
+    background-color: #00bcd4; /* Highlight on hover */
+    color: #fff; /* White text on hover */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* Glow effect */
 }
 
 /* Main */
@@ -81,10 +69,10 @@ main {
 
 h1 {
     font-size: 3rem;
-    color: #00FF7F; /* Neon green for the main title */
+    color: #003366; /* Dark blue for the main title */
     margin-bottom: 30px;
     text-align: center;
-    text-shadow: 0 0 10px rgba(0, 255, 127, 0.7);
+    text-shadow: 0 0 10px rgba(0, 51, 102, 0.7);
 }
 
 /* Section Fade-In */
@@ -101,24 +89,24 @@ h1 {
 
 /* Individual sections */
 section {
-    background-color: #232f3e; /* Dark grey background for sections */
+    background-color: #ffffff; /* White background for sections */
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 255, 127, 0.2); /* Glow effect */
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.2); /* Subtle glow effect */
     margin-bottom: 30px;
 }
 
 h2 {
     font-size: 2rem;
-    color: #00FF7F;
+    color: #003366;
     margin-bottom: 20px;
     text-align: center;
-    text-shadow: 0 0 10px rgba(0, 255, 127, 0.5);
+    text-shadow: 0 0 10px rgba(0, 51, 102, 0.5);
 }
 
 p, ul {
     font-size: 1rem;
-    color: #ccc; /* Light grey text */
+    color: #666; /* Medium grey text */
     line-height: 1.8;
 }
 
@@ -133,8 +121,8 @@ ul li {
 
 /* Footer */
 footer {
-    background-color: #0f1a23; /* Deep navy for footer */
-    color: #00FF7F; /* Neon green for footer text */
+    background-color: #2e2e2e; /* Dark grey for footer */
+    color: #fff; /* White text */
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
@@ -147,7 +135,7 @@ footer {
 
 /* Button Style */
 button {
-    background-color: #00FF7F;
+    background-color: #00bcd4;
     border: none;
     color: black;
     padding: 12px 24px;
@@ -158,11 +146,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
 }
 
 button:hover {
-    background-color: #00cc66;
+    background-color: #00a2b3;
 }
 
 /* Responsive Design */
