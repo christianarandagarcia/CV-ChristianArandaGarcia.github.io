@@ -1,26 +1,38 @@
 // Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
-    // Add a hover effect to all section titles
-    const sectionHeaders = document.querySelectorAll('section h2');
+    // Smooth fade-in effect for sections
+    const sections = document.querySelectorAll('section');
     
-    sectionHeaders.forEach(header => {
-        header.addEventListener('mouseover', () => {
-            header.style.color = '#2E7D32';
-            header.style.cursor = 'pointer';
-        });
+    const fadeIn = (element) => {
+        element.style.opacity = 0;
+        element.style.transition = 'opacity 1.5s ease-in-out';
+        element.style.opacity = 1;
+    };
 
-        header.addEventListener('mouseout', () => {
-            header.style.color = '#4CAF50';
-        });
+    sections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transition = 'opacity 1.5s ease-in-out';
     });
 
-    // Add a smooth scrolling effect for navigation links (if applicable)
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', (event) => {
+    const handleScroll = () => {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) {
+                fadeIn(section);
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    // Navigation menu functionality
+    const menuItems = document.querySelectorAll('nav a');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', (event) => {
             event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
+            const targetId = item.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
@@ -32,10 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Example dynamic feature: Display current year in the footer
+    // Dynamic footer year update
     const footer = document.querySelector('footer');
     if (footer) {
         const year = new Date().getFullYear();
         footer.innerHTML += `<p>&copy; ${year} Christian Aranda Garcia. Tots els drets reservats.</p>`;
     }
+
+    // Artistic hover effects for navigation menu
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            link.style.color = '#FF5722';
+            link.style.textShadow = '0 0 10px rgba(255, 87, 34, 0.7)';
+        });
+        link.addEventListener('mouseout', () => {
+            link.style.color = '';
+            link.style.textShadow = '';
+        });
+    });
 });
