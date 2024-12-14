@@ -1,1 +1,0 @@
-# CV-ChristianArandaGarcia.github.io
